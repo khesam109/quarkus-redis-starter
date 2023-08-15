@@ -16,6 +16,10 @@
             <groupId>com.khesam</groupId>
             <artifactId>redis-service</artifactId>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-redis-client</artifactId>
+        </dependency>
+    </dependencies>
 </project>

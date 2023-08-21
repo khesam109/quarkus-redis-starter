@@ -26,6 +26,10 @@ public class OtpController implements OtpRestResource {
 
     @Override
     public Response verifyOtp(String trackingCode, VerifyOtpCommand verifyOtpCommand) {
-        return Response.status(Response.Status.NOT_IMPLEMENTED).build();
+        if (otpService.verifyOtp(trackingCode, verifyOtpCommand.password())) {
+            return Response.accepted().build();
+        } else {
+            return Response.notAcceptable(null).build();
+        }
     }
 }

@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface OtpRepository {
 
     void saveOtp(Otp otp);
-    Optional<Otp> getOtp(OtpId otpId);
+    Otp getOtp(OtpId otpId);
 }

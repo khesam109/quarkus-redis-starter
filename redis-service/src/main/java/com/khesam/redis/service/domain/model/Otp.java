@@ -9,21 +9,14 @@ public class Otp extends BaseModel<OtpId> {
 
     private static final int MAX_WRONG_ATTEMPT = 3;
 
-    private final OtpUsage usage;
-    private final String mobileNumber;
     private int wrongAttempts;
     private String password;
     private OtpStatus status;
 
-    public Otp(OtpUsage usage, String mobileNumber) {
-        this.usage = usage;
-        this.mobileNumber = mobileNumber;
-    }
-
-    public void createOtp() {
+    public void createOtp(String password) {
         setId(new OtpId(UUID.randomUUID()));
         this.wrongAttempts = 0;
-        this.password = "571122";
+        this.password = password;
         this.status = OtpStatus.PENDING;
     }
 
@@ -45,20 +38,16 @@ public class Otp extends BaseModel<OtpId> {
         }
     }
 
-    public OtpUsage getUsage() {
-        return usage;
-    }
-
-    public String getMobileNumber() {
-        return mobileNumber;
-    }
-
     public int getWrongAttempts() {
         return wrongAttempts;
     }
 
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public OtpStatus getStatus() {

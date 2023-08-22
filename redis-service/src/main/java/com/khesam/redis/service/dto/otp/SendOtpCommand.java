@@ -1,4 +1,4 @@
-package com.khesam.redis.service.dto;
+package com.khesam.redis.service.dto.otp;
 
 import java.io.Serializable;
 

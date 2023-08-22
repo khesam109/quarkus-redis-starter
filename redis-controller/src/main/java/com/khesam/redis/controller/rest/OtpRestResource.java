@@ -1,7 +1,7 @@
 package com.khesam.redis.controller.rest;
 
-import com.khesam.redis.service.dto.SendOtpCommand;
-import com.khesam.redis.service.dto.VerifyOtpCommand;
+import com.khesam.redis.service.dto.otp.SendOtpCommand;
+import com.khesam.redis.service.dto.otp.VerifyOtpCommand;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;

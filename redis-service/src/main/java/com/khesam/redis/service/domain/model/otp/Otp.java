@@ -1,5 +1,6 @@
-package com.khesam.redis.service.domain.model;
+package com.khesam.redis.service.domain.model.otp;
 
+import com.khesam.redis.service.domain.model.BaseModel;
 import com.khesam.redis.service.domain.valueobject.OtpId;
 import com.khesam.redis.service.exception.OtpException;
 

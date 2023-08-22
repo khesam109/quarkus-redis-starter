@@ -1,7 +1,8 @@
-package com.khesam.redis.controller.rest;
+package com.khesam.redis.controller.rest.impl;
 
-import com.khesam.redis.service.dto.SendOtpCommand;
-import com.khesam.redis.service.dto.VerifyOtpCommand;
+import com.khesam.redis.controller.rest.OtpRestResource;
+import com.khesam.redis.service.dto.otp.SendOtpCommand;
+import com.khesam.redis.service.dto.otp.VerifyOtpCommand;
 import com.khesam.redis.service.port.input.OtpService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;

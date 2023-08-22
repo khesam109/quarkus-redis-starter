@@ -1,4 +1,4 @@
-package com.khesam.redis.service.domain.model;
+package com.khesam.redis.service.domain.model.otp;
 
 import java.util.EnumSet;
 

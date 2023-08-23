@@ -2,7 +2,9 @@ package com.khesam.redis.repository.hardcode;
 
 import com.khesam.redis.repository.mapper.UserMapper;
 import com.khesam.redis.service.domain.model.sessionmanagement.User;
+import com.khesam.redis.service.exception.InvalidCredentials;
 import com.khesam.redis.service.exception.SessionManagementException;
+import com.khesam.redis.service.exception.UserNotFoundException;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
@@ -29,7 +31,7 @@ public class UserHardCodeRepository {
         if (user.getPassword().equals(password)) {
             return userMapper.fromUserEntity(user);
         } else {
-            throw new SessionManagementException("Invalid username/password");
+            throw new InvalidCredentials();
         }
     }
 
@@ -41,7 +43,7 @@ public class UserHardCodeRepository {
     private UserEntity selectUser(String username) {
         UserEntity user = users.get(username);
         if (user == null) {
-            throw new SessionManagementException("Invalid username/password");
+            throw new UserNotFoundException();
         }
 
         return user;

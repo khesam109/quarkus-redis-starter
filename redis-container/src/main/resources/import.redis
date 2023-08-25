@@ -1,0 +1,2 @@
+SET app:config:suspension:threshold 3
+SET app:config:suspension:duration:min 1

@@ -1,6 +1,10 @@
 package com.khesam.redis.service.exception;
 
 public class SessionManagementException extends DomainException {
+
+    public SessionManagementException() {
+    }
+
     public SessionManagementException(String message) {
         super(message);
     }

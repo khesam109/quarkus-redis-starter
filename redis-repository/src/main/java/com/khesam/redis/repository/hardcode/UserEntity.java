@@ -36,7 +36,6 @@ public class UserEntity {
         return lastname;
     }
 
-
     public static final class Builder {
         private String nationalCode;
         private String username;

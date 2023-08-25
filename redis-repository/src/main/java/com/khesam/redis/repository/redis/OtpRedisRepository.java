@@ -12,6 +12,8 @@ import java.util.Optional;
 public class OtpRedisRepository {
 
     private static final int OTP_EXPIRATION_IN_SEC = 50;
+    private static final String OTP_KEY = "otp:%S";
+
 
     private final ValueCommands<String, String> commands;
 
@@ -23,7 +25,7 @@ public class OtpRedisRepository {
 
     public void insertOtp(String id, String password) {
         commands.set(
-                id,
+                buildKey(id),
                 password,
                 new SetArgs().ex(
                         OTP_EXPIRATION_IN_SEC
@@ -33,7 +35,15 @@ public class OtpRedisRepository {
 
     public Optional<String> selectOtp(String id) {
         return Optional.ofNullable(
-                commands.get(id)
+                commands.get(
+                        buildKey(buildKey(id))
+                )
+        );
+    }
+
+    private String buildKey(String id) {
+        return String.format(
+                OTP_KEY, id
         );
     }
 }

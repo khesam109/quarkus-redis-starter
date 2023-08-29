@@ -7,4 +7,5 @@ public interface OtpRepository {
 
     void saveOtp(Otp otp);
     Otp getOtp(OtpId otpId);
+    void removeOtp(OtpId otpId);
 }

@@ -39,4 +39,11 @@ public class OtpRepositoryAdapter implements OtpRepository {
         otp.setPassword(password.get());
         return otp;
     }
+
+    @Override
+    public void removeOtp(OtpId otpId) {
+        otpRedisRepository.deleteOtp(
+                otpId.getValue().toString()
+        );
+    }
 }

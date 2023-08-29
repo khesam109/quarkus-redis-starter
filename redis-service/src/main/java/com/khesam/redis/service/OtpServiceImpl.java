@@ -44,6 +44,12 @@ public class OtpServiceImpl implements OtpService {
     @Override
     public boolean verifyOtp(String trackingCode, String password) {
         Otp otp = otpRepository.getOtp(new OtpId(UUID.fromString(trackingCode)));
-        return otp.verifyOtp(password);
+        boolean isVerified = otp.verifyOtp(password);
+
+        if (isVerified) {
+            otpRepository.removeOtp(otp.getId());
+        }
+
+        return isVerified;
     }
 }

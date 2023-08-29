@@ -6,13 +6,14 @@ import io.quarkus.redis.datasource.value.ValueCommands;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
+import java.util.Locale;
 import java.util.Optional;
 
 @ApplicationScoped
 public class OtpRedisRepository {
 
     private static final int OTP_EXPIRATION_IN_SEC = 50;
-    private static final String OTP_KEY = "otp:%S";
+    private static final String OTP_KEY = "otp:%s";
 
 
     private final ValueCommands<String, String> commands;
@@ -36,8 +37,14 @@ public class OtpRedisRepository {
     public Optional<String> selectOtp(String id) {
         return Optional.ofNullable(
                 commands.get(
-                        buildKey(buildKey(id))
+                        buildKey(id)
                 )
+        );
+    }
+
+    public void deleteOtp(String id) {
+        commands.getdel(
+                buildKey(id)
         );
     }
 

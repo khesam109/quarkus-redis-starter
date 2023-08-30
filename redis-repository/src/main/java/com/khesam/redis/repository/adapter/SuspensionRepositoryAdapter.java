@@ -34,6 +34,6 @@ public class SuspensionRepositoryAdapter implements SuspensionRepository {
 
     @Override
     public void suspendUser(String username) {
-
+        suspensionRedisRepository.suspendUser(username);
     }
 }

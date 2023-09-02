@@ -1,6 +1,6 @@
 package com.khesam.redis.repository.redis;
 
-import com.khesam.redis.service.port.output.SuspensionConfigRepository;
+import com.khesam.redis.service.port.output.repository.SuspensionConfigRepository;
 import io.quarkus.redis.datasource.RedisDataSource;
 import io.quarkus.redis.datasource.value.ValueCommands;
 import jakarta.enterprise.context.ApplicationScoped;

@@ -1,6 +1,6 @@
 package com.khesam.redis.repository.mapper;
 
-import com.khesam.redis.repository.hardcode.UserEntity;
+import com.khesam.redis.repository.entity.UserEntity;
 import com.khesam.redis.service.domain.model.sessionmanagement.User;
 import com.khesam.redis.service.domain.valueobject.UserId;
 import jakarta.enterprise.context.ApplicationScoped;

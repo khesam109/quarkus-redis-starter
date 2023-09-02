@@ -36,7 +36,7 @@ public class UserRedisCacheRepository {
     public void insertUser(User user) {
         commands.set(
                 buildKey(user.getUsername()),
-                redisCustomSerializer.serializerUserEntity(
+                redisCustomSerializer.serializeUserEntity(
                         userMapper.toUserEntity(user)
                 ),
                 new SetArgs().ex(

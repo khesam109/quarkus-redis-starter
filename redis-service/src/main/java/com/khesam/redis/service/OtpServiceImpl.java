@@ -6,7 +6,7 @@ import com.khesam.redis.service.domain.valueobject.OtpId;
 import com.khesam.redis.service.dto.otp.SendOtpCommand;
 import com.khesam.redis.service.dto.otp.SendOtpResponse;
 import com.khesam.redis.service.port.input.OtpService;
-import com.khesam.redis.service.port.output.OtpRepository;
+import com.khesam.redis.service.port.output.repository.OtpRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

@@ -1,7 +1,7 @@
 package com.khesam.redis.repository.adapter;
 
 import com.khesam.redis.repository.redis.IdGeneratorRedisRepository;
-import com.khesam.redis.service.port.output.IdGeneratorRepository;
+import com.khesam.redis.service.port.output.repository.IdGeneratorRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

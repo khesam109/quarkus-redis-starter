@@ -3,7 +3,7 @@ package com.khesam.redis.repository.adapter;
 import com.khesam.redis.repository.hardcode.UserHardCodeRepository;
 import com.khesam.redis.repository.redis.UserRedisCacheRepository;
 import com.khesam.redis.service.domain.model.sessionmanagement.User;
-import com.khesam.redis.service.port.output.UserRepository;
+import com.khesam.redis.service.port.output.repository.UserRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

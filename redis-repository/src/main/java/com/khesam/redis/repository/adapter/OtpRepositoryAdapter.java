@@ -4,7 +4,7 @@ import com.khesam.redis.repository.redis.OtpRedisRepository;
 import com.khesam.redis.service.domain.model.otp.Otp;
 import com.khesam.redis.service.domain.valueobject.OtpId;
 import com.khesam.redis.service.exception.OtpException;
-import com.khesam.redis.service.port.output.OtpRepository;
+import com.khesam.redis.service.port.output.repository.OtpRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

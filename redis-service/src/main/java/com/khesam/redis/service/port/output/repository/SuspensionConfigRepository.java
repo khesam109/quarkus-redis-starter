@@ -1,4 +1,4 @@
-package com.khesam.redis.service.port.output;
+package com.khesam.redis.service.port.output.repository;
 
 public interface SuspensionConfigRepository {
 

@@ -1,7 +1,7 @@
 package com.khesam.redis.repository.adapter;
 
 import com.khesam.redis.repository.redis.SuspensionRedisRepository;
-import com.khesam.redis.service.port.output.SuspensionRepository;
+import com.khesam.redis.service.port.output.repository.SuspensionRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

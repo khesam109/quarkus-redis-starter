@@ -1,5 +1,6 @@
 package com.khesam.redis.repository.hardcode;
 
+import com.khesam.redis.repository.entity.UserEntity;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.Arrays;

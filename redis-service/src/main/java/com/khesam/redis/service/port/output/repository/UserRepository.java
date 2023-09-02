@@ -1,4 +1,4 @@
-package com.khesam.redis.service.port.output;
+package com.khesam.redis.service.port.output.repository;
 
 import com.khesam.redis.service.domain.model.sessionmanagement.User;
 

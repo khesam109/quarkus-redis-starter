@@ -1,7 +1,7 @@
 package com.khesam.redis.repository.adapter;
 
 import com.khesam.redis.repository.redis.LockRedisRepository;
-import com.khesam.redis.service.port.output.LockRepository;
+import com.khesam.redis.service.port.output.repository.LockRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

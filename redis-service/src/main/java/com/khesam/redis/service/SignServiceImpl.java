@@ -3,8 +3,8 @@ package com.khesam.redis.service;
 import com.khesam.redis.service.dto.sign.CreateSignRequestResponse;
 import com.khesam.redis.service.exception.IllegalConcurrentAccessException;
 import com.khesam.redis.service.port.input.SignService;
-import com.khesam.redis.service.port.output.IdGeneratorRepository;
-import com.khesam.redis.service.port.output.LockRepository;
+import com.khesam.redis.service.port.output.repository.IdGeneratorRepository;
+import com.khesam.redis.service.port.output.repository.LockRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

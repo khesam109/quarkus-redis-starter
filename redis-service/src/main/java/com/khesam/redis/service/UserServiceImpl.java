@@ -5,9 +5,9 @@ import com.khesam.redis.service.dto.sessionmanagement.UserInfoResponse;
 import com.khesam.redis.service.exception.InvalidCredentialsException;
 import com.khesam.redis.service.exception.SuspendedUserException;
 import com.khesam.redis.service.port.input.UserService;
-import com.khesam.redis.service.port.output.SuspensionConfigRepository;
-import com.khesam.redis.service.port.output.SuspensionRepository;
-import com.khesam.redis.service.port.output.UserRepository;
+import com.khesam.redis.service.port.output.repository.SuspensionConfigRepository;
+import com.khesam.redis.service.port.output.repository.SuspensionRepository;
+import com.khesam.redis.service.port.output.repository.UserRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

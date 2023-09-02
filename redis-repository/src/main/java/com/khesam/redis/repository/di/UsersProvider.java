@@ -1,6 +1,6 @@
 package com.khesam.redis.repository.di;
 
-import com.khesam.redis.repository.hardcode.UserEntity;
+import com.khesam.redis.repository.entity.UserEntity;
 import com.khesam.redis.repository.hardcode.UserEntityFactory;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;

@@ -22,7 +22,16 @@
         </dependency>
         <dependency>
             <groupId>com.khesam</groupId>
+            <artifactId>redis-messaging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.khesam</groupId>
             <artifactId>redis-repository</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.khesam</groupId>
+            <artifactId>external-gateway</artifactId>
         </dependency>
     </dependencies>
 

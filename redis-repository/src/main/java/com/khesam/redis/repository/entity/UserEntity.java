@@ -1,4 +1,4 @@
-package com.khesam.redis.repository.hardcode;
+package com.khesam.redis.repository.entity;
 
 public class UserEntity {
 

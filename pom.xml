@@ -14,6 +14,8 @@
         <module>redis-controller</module>
         <module>redis-service</module>
         <module>redis-repository</module>
+        <module>redis-messaging</module>
+        <module>external-gateway</module>
     </modules>
 
     <parent>
@@ -42,7 +44,17 @@
             </dependency>
             <dependency>
                 <groupId>com.khesam</groupId>
+                <artifactId>redis-messaging</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.khesam</groupId>
                 <artifactId>redis-repository</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.khesam</groupId>
+                <artifactId>external-gateway</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

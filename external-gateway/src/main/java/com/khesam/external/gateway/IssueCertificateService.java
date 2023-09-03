@@ -30,13 +30,12 @@ public class IssueCertificateService {
         if (result) {
             executorService.execute(() -> issueCertificateCompletedPublisher.publish(id));
         } else {
-            issueCertificateFailedPublisher.publish(id);
+            executorService.execute(() -> issueCertificateFailedPublisher.publish(id));
         }
     }
 
     private boolean issueCertificate() {
-        return true;
-//        Random random = new Random();
-//        return random.nextBoolean();
+        Random random = new Random();
+        return random.nextBoolean();
     }
 }

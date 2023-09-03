@@ -35,6 +35,7 @@ public class IssueCertificateResponseListenerImpl implements IssueCertificateRes
 
             certificateRepository.updateCertificate(certificate);
         });
+
 //        Certificate certificate = certificateRepository.getCertificate(
 //                new CertificateId(UUID.fromString(id))
 //        );
@@ -45,11 +46,20 @@ public class IssueCertificateResponseListenerImpl implements IssueCertificateRes
 
     @Override
     public void failed(String id) {
-        Certificate certificate = certificateRepository.getCertificate(
-                new CertificateId(UUID.fromString(id))
-        );
-        certificate.reject();
+        executorService.execute(() -> {
+            Certificate certificate = certificateRepository.getCertificate(
+                    new CertificateId(UUID.fromString(id))
+            );
+            certificate.reject();
 
-        certificateRepository.updateCertificate(certificate);
+            certificateRepository.updateCertificate(certificate);
+        });
+
+//        Certificate certificate = certificateRepository.getCertificate(
+//                new CertificateId(UUID.fromString(id))
+//        );
+//        certificate.reject();
+//
+//        certificateRepository.updateCertificate(certificate);
     }
 }

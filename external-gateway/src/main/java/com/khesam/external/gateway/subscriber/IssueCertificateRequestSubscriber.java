@@ -38,12 +38,6 @@ public class IssueCertificateRequestSubscriber implements Consumer<String> {
     @Override
     public void accept(String id) {
         issueCertificateService.issueCertificate(id);
-//        boolean result = issueCertificate();
-//        if (result) {
-//            issueCertificateCompletedPublisher.publish(id);
-//        } else {
-//            issueCertificateFailedPublisher.publish(id);
-//        }
     }
 
     @PreDestroy

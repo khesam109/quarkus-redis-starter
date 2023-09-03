@@ -2,6 +2,8 @@ package com.khesam.external.gateway.publisher;
 
 import io.quarkus.redis.datasource.RedisDataSource;
 import io.quarkus.redis.datasource.pubsub.PubSubCommands;
+import io.smallrye.mutiny.Uni;
+import io.smallrye.mutiny.groups.UniCreate;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
@@ -14,9 +16,10 @@ public class IssueCertificateCompletedPublisher {
         pubSubCommands = dataSource.pubsub(String.class);
     }
 
-    public void publish(String id) {
+    public Uni<Void> publish(String id) {
         pubSubCommands.publish(
                 ISSUE_CERTIFICATE_COMPLETED_CHANNEL_NAME, id
         );
+        return Uni.createFrom().voidItem();
     }
 }

@@ -19,9 +19,11 @@ public class SuspensionRedisRepository {
     }
 
     public boolean isSuspended(String username) {
-        return commands.get(
+        Integer x = commands.get(
                 buildKey(username)
-        ) == USER_SUSPENDED_STATUS_VALUE;
+        );
+
+        return x != null && x == USER_SUSPENDED_STATUS_VALUE;
     }
 
     public long addWrongAttempt(String username) {

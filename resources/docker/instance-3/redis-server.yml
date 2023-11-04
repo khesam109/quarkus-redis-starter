@@ -1,0 +1,79 @@
+version: '3.9'
+
+volumes:
+  r3-storage:
+    driver: local
+  s3-storage:
+    driver: local
+
+
+services:
+  redis-instance-3:
+    image: bitnami/redis:latest
+    container_name: redis-instance-3
+    hostname: r3.redis-cluster.com
+    restart: on-failure
+
+    ports:
+      - "6379:6379"
+
+    extra_hosts:
+      - "r1.redis-cluster.com:172.16.67.128"
+      - "r2.redis-cluster.com:172.16.67.129"
+
+    environment:
+      - REDIS_MASTER_PORT_NUMBER=6379
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+      #      - ALLOW_EMPTY_PASSWORD=yes
+      #      - REDIS_IO_THREADS_DO_READS=true
+      #      - REDIS_IO_THREADS=4
+
+      - REDIS_REPLICATION_MODE=slave
+      - REDIS_MASTER_HOST=r1.redis-cluster.com
+
+      - REDIS_REPLICA_IP=r3.redis-cluster.com
+      - REDIS_REPLICA_PORT=6379
+
+    env_file:
+      - credentials.env
+
+    volumes:
+      - r3-storage:/data
+
+  redis-sentinel-3:
+    image: bitnami/redis-sentinel:latest
+    container_name: redis-sentinel-3
+    hostname: s3.redis-cluster.com
+
+    depends_on:
+      - redis-instance-3
+    ports:
+
+      - '26379:26379'
+
+    extra_hosts:
+      - "r1.redis-cluster.com:172.16.67.128"
+      - "r2.redis-cluster.com:172.16.67.129"
+
+      - "s1.redis-cluster.com:172.16.67.128"
+      - "s2.redis-cluster.com:172.16.67.129"
+
+    environment:
+      - REDIS_SENTINEL_PORT_NUMBER=26379
+      - REDIS_MASTER_SET=hamoon-redis-master
+      - REDIS_SENTINEL_QUORUM=2
+      - REDIS_SENTINEL_DOWN_AFTER_MILLISECONDS=60000
+      - REDIS_SENTINEL_FAILOVER_TIMEOUT=180000
+      - REDIS_SENTINEL_RESOLVE_HOSTNAMES=yes
+      - REDIS_SENTINEL_ANNOUNCE_HOSTNAMES=yes
+
+      - REDIS_MASTER_HOST=r1.redis-cluster.com
+      - REDIS_MASTER_PORT_NUMBER=6379
+
+      - REDIS_SENTINEL_ANNOUNCE_IP=s3.redis-cluster.com
+      - ANNOUNCE_PORT=26379
+      - REDIS_MASTER_PASSWORD=salamsalam
+      - REDIS_SENTINEL_PASSWORD=aa
+
+    volumes:
+      - s3-storage:/data

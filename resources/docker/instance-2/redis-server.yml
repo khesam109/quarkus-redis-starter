@@ -74,7 +74,7 @@ services:
       - REDIS_SENTINEL_ANNOUNCE_IP=s2.redis-cluster.com
       - ANNOUNCE_PORT=26379
       - REDIS_MASTER_PASSWORD=salamsalam
-      - REDIS_SENTINEL_PASSWORD=aa
+#      - REDIS_SENTINEL_PASSWORD=aa
 
     volumes:
       - s2-storage:/data

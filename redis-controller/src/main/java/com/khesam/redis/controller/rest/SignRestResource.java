@@ -25,4 +25,12 @@ public interface SignRestResource {
             @PathParam("signTrackingCode") String signTrackingCode,
             SignCommand signCommand
     );
+
+    @GET
+    @Path("/{userId}/sign/{signTrackingCode}")
+    @Produces(MediaType.APPLICATION_JSON)
+    Response getStatus(
+            @PathParam("userId") String userId,
+            @PathParam("signTrackingCode") String signTrackingCode
+    );
 }

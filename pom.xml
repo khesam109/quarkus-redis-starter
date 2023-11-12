@@ -21,7 +21,7 @@
     <parent>
         <groupId>io.quarkus.platform</groupId>
         <artifactId>quarkus-bom</artifactId>
-        <version>3.3.0</version>
+        <version>3.5.0</version>
         <relativePath/>
     </parent>
 
